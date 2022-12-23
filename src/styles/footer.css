@@ -1,0 +1,12 @@
+.footer {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    padding: 10px;
+}
+
+.footer > span {
+    color: cyan;
+    margin-right: 10px;
+}

@@ -1,0 +1,65 @@
+.contact-me-container {
+    margin-top: 140px;
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    padding-bottom: 20px;
+}
+
+.contact-me-header-text {
+    font-size: 40px;
+    color: cyan;
+}
+
+.contact-me-container > h1 {
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input,
+textarea {
+    width: 500px !important;
+    border: none !important;
+    background-color: rgba(87, 85, 85, 0.068);
+    padding: 15px;
+    border-radius: 2px;
+    color: white;
+}
+
+input::placeholder {
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+}
+
+textarea::placeholder {
+    color: white;
+    font-size: 20px;
+}
+
+.no-border {
+    border: none;
+}
+
+
+.form-button {
+    margin-top: 20px;
+    border: 3px solid cyan;
+    padding: 10px;
+    transition: all 0.5s ease-out;
+    background: linear-gradient(to right, cyan 50%, transparent 50%);
+    background-size: 200% 100%;
+    background-position: right;
+    color: cyan;
+    font-size: 20px;
+}
+
+.form-button:hover {
+    background-position: left;
+    color: black;
+}

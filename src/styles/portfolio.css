@@ -1,0 +1,90 @@
+#portfolio {
+    padding: 20px;
+}
+
+.portfolio {
+    color: #00FFFF;
+    font-size: 70px;
+    font-family: font-file-82132;
+    font-weight: bold;
+    margin-left: 30px;
+}
+
+.port-text {
+    width: 40%;
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+
+.work-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.card {
+    background-color: rgba(122, 120, 120, 0.068);
+    padding: 20px;
+    width: 30%;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.metro {
+    width: 100%;
+    height: 100%;
+}
+
+.tools-used {
+    display: flex;
+    gap: 10px;
+}
+
+.tools-used > li {
+    padding: 10px;
+    background-color: rgba(122, 120, 120, 0.068);
+    opacity: 0, 7;
+    margin: 10px 0;
+}
+
+.card-text {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.9;
+    gap: 20px;
+    background-color: rgba(24, 240, 240, 0.151);
+    color: white;
+    transition: all 0.5s;
+}
+
+.card-text > a {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    border: 3px solid cyan;
+    padding: 5px;
+    transition: all 0.5s ease-out;
+    background: linear-gradient(to right, cyan 50%, transparent 50%);
+    background-size: 200% 100%;
+    background-position: right;
+    color: cyan;
+}
+
+.card-text > a:hover {
+    background-position: left;
+    color: black;
+}
+
+.card:hover .card-text {
+    left: 0;
+}
