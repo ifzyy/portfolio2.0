@@ -1,11 +1,13 @@
+.center {
+    text-align: center;
+}
 @media (min-width:1000px) {
 #services {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px 0 50px;
-    background: #070707;
-    margin-bottom: 150px;
+    padding: 50px 40px 100px 50px;
+background: #191970;
     margin-top: 100px;
 }
 
@@ -59,9 +61,8 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        padding: 0 40px 0 50px;
-        background: #070707;
-        margin-bottom: 150px;
+        padding: 50px 40px 100px 50px;
+        background: #191970;
         margin-top: 100px;
     }
 

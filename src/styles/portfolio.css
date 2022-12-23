@@ -5,12 +5,15 @@
   flex-wrap: wrap;
   gap: 50px;
 }
+
 ul {
   padding: 0;
 }
+
 @media (min-width: 1000px) {
   #portfolio {
     padding: 20px;
+    background: #191970;
   }
 
   .portfolio {
@@ -19,8 +22,8 @@ ul {
     font-family: font-file-82132;
     font-weight: bold;
     margin-left: 30px;
-        font-family: 'Dancing Script', cursive;
-          font-family: 'Sevillana', cursive;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Sevillana', cursive;
   }
 
   .port-text {
@@ -68,7 +71,7 @@ ul {
     align-items: center;
     opacity: 0.9;
     gap: 20px;
-    background-color: rgba(24, 240, 240, 0.151);
+    background-color: rgba(0, 0, 0, 0.719);
     color: white;
     transition: all 0.5s;
   }
@@ -99,6 +102,7 @@ ul {
 @media (max-width: 999px) {
   #portfolio {
     padding: 20px;
+      background: #191970;
   }
 
   .card-header {
@@ -111,8 +115,8 @@ ul {
     font-family: font-file-82132;
     font-weight: bold;
     margin-left: 30px;
-      font-family: 'Dancing Script', cursive;
-        font-family: 'Sevillana', cursive;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Sevillana', cursive;
   }
 
   .port-text {
@@ -121,7 +125,7 @@ ul {
   }
 
   .card {
-    background-color: rgba(122, 120, 120, 0.068);
+    background-color: rgba(0, 0, 0, 0.719);
     padding: 20px;
     box-sizing: border-box;
   }
