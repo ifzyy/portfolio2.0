@@ -10,4 +10,5 @@ background: #070707;
  padding: 0;
  color: white;
  scroll-behavior: smooth;
+ overflow: hidden;
 }
