@@ -17,7 +17,7 @@ const About = () => {
                         Building web applications, and beautiful websites for companies. <br/>
                         I love learning new languages and technologies and i am experienced in landing projects in a time pressured settings.
                     </p>
-                    <a className="resume" href="resume">Get My Resume</a>
+                    <a className="resume" target="blank" href="https://docs.google.com/document/d/1tLfvt2igmRN-oh-5-nXqFZWA4qcpI37imy7ylz69Ljk/edit?usp=sharing">Get My Resume</a>
                 </div>
 
                 <div className="my-image" data-aos="zoom-in-down"><img className="me" src="https://user-images.githubusercontent.com/46050946/154709509-cecdbcc3-20ed-4037-9046-99f7a05d5dbb.gif" alt="BigCo Inc. logo" /></div>

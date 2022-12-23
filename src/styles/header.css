@@ -1,3 +1,6 @@
+    .supporting-text > ul {
+        padding: 20px;
+    }
 @media (min-width: 1000px) {
     .headline {
         margin-top: 5%;
@@ -64,6 +67,7 @@
 
     .contact-me-up {
         border: 3px solid cyan;
+        margin-top: 20px;
         padding: 10px;
         transition: all 0.5s ease-out;
         background: linear-gradient(to right, cyan 50%, transparent 50%);
@@ -88,6 +92,7 @@
         align-items: center;
         gap: 20px;
     }
+
     li {
         list-style-type: none;
     }

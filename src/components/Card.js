@@ -21,8 +21,8 @@ const Card = (props) => {
                 ))}
             </ul>
             <div className="card-text">
-                <a href={source}><BsGithub />See Source</a>
-                <a href={live}><BsBoxArrowInUpRight />See Live</a>
+                <a href={source} target="blank"><BsGithub />See Source</a>
+                <a href={live} target="blank"><BsBoxArrowInUpRight />See Live</a>
             </div>
             <img src={image} alt="" className="metro" />
         </div>

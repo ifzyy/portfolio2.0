@@ -34,7 +34,7 @@ const Header = () => {
                             some of my work and experience! If you like what you see and have a project you need coded,
                             don't hestiate to contact me.
                         </div>
-                        <button className="contact-me-up">Contact me</button>
+                        <a href="#contact" className="contact-me-up">Contact me</a>
                     </div>
                 </div>
                 <div className="profile"><img className="hero" src={profile} alt="BigCo Inc. logo" /></div>
