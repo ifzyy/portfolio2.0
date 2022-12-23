@@ -1,16 +1,21 @@
-import React from 'react'
+import React,{useEffect} from 'react'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { BsGithub, BsBoxArrowInUpRight } from 'react-icons/bs';
 const Card = (props) => {
+    useEffect(() => {
+        AOS.init({ duration: 1000, easing: 'linear' });
+        AOS.refresh();
+    }, []);
     const { name, description, tools, image, live, source } = props
-    console.log(tools)
     return (
 
-        <div id="card1" className="card">
-            <h1 className="card-header">{name}</h1>
-            <p className="card-desc">
+        <div id="card1" className="card" data-aos="fade-right">
+            <h1 className="card-header" data-aos="fade-left">{name}</h1>
+            <p className="card-desc" data-aos="fade-right">
                 {description}
             </p>
-            <ul className="tools-used">
+            <ul className="tools-used" data-aos="fade-left">
                 {tools.map(element => (
                     <li className="tool"> {element}</li>
                 ))}

@@ -1,76 +1,163 @@
-.headline {
-    margin-top: 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 150px;
-    height: 90vh;
+@media (min-width: 1000px) {
+    .headline {
+        margin-top: 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 150px;
+        height: 90vh;
+    }
+
+    li {
+        list-style-type: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .supporting-text {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .hero {
+        width: 700px;
+        height: auto;
+    }
+
+    .desktop-links {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .desktop-links > li > a {
+        font-size: 26px;
+        color: white;
+    }
+
+    .desktop-links > li > a:hover {
+        color: cyan;
+    }
+
+    .greeting {
+        font-size: 80px;
+        font-weight: bold;
+    }
+
+    .greeting > span {
+        color: cyan;
+    }
+
+    .introduction-text {
+        font-size: 30px;
+    }
+
+    .description {
+        font-size: 18px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        opacity: 0.6;
+    }
+
+    .contact-me-up {
+        border: 3px solid cyan;
+        padding: 10px;
+        transition: all 0.5s ease-out;
+        background: linear-gradient(to right, cyan 50%, transparent 50%);
+        background-size: 200% 100%;
+        background-position: right;
+        color: cyan;
+        font-size: 20px;
+    }
+
+    .contact-me-up:hover {
+        background-position: left;
+        color: black;
+    }
 }
 
-li {
-    list-style-type: none;
-}
+@media (max-width: 999px) {
+    .headline {
+        margin-top: 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
+    li {
+        list-style-type: none;
+    }
 
-a {
-    text-decoration: none;
-}
+    a {
+        text-decoration: none;
+    }
 
-.supporting-text {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-}
+    .supporting-text {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 50px;
+        padding: 30px;
+    }
 
-.hero {
-    width: 700px;
-    height: auto;
-}
+    .hero {
+        width: 300px;
+        height: auto;
+    }
 
-.desktop-links {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
+    .desktop-links {
+        display: flex;
+        gap: 20px;
+    }
 
-.desktop-links > li > a {
-    font-size: 26px;
-    color: white;
-}
+    .desktop-links > li > a {
+        font-size: 20px;
+        color: white;
+    }
 
-.desktop-links > li > a:hover {
-    color: cyan;
-}
+    .desktop-links > li > a:hover {
+        color: cyan;
+    }
 
-.greeting {
-    font-size: 80px;
-    font-weight: bold;
-}
 
-.greeting > span {
-    color: cyan;
-}
-.introduction-text {
-    font-size: 30px;
-}
 
-.description {
-    font-size: 18px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    opacity: 0.6;
-}
+    .greeting {
+        font-size: 30px;
+        font-weight: bold;
+    }
 
-.contact-me-up {
-    border: 3px solid cyan;
-    padding: 10px;
- transition: all 0.5s ease-out;
-    background: linear-gradient(to right, cyan 50%,transparent 50%);
-    background-size: 200% 100%;
-    background-position: right;
-    color: cyan;
-    font-size: 20px;
-}
-.contact-me-up:hover {
-    background-position: left;
-    color: black;
+    .greeting > span {
+        color: cyan;
+    }
+
+    .introduction-text {
+        font-size: 20px;
+    }
+
+    .description {
+        font-size: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        opacity: 0.6;
+    }
+
+    .contact-me-up {
+        border: 3px solid cyan;
+        padding: 10px;
+        transition: all 0.5s ease-out;
+        background: linear-gradient(to right, cyan 50%, transparent 50%);
+        background-size: 200% 100%;
+        background-position: right;
+        color: cyan;
+        font-size: 20px;
+    }
+
+    .contact-me-up:hover {
+        background-position: left;
+        color: black;
+    }
+
 }
