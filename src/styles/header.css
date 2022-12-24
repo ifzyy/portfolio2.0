@@ -1,6 +1,10 @@
     .supporting-text > ul {
         padding: 20px;
     }
+    .spi {
+        display: flex;
+        gap: 20px;
+    }
 @media (min-width: 1000px) {
     .headline {
         margin-top: 5%;
