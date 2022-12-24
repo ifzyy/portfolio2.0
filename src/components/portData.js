@@ -46,11 +46,26 @@ export const data = [
     },
     {
         name: "Maths Magician",
-        description: "The project is a Single Page Application (SPA) that gives users the ability to perform basic mathematical operation and get daily mathematical quote;",
+        description: "The project is a Single Page Application (SPA) that gives users the ability to perform basic mathematical operation and get daily mathematical quote",
         tools: ["React","Redux", "css", "Javascript"],
         image: "../images/maths.png",
         live: "https://63a4f55b406eb8009ada903c--peppy-kleicha-ddf466.netlify.app/",
         source: "https://github.com/ifzyy/capstone-one"
-
+    },
+    {
+        name: "Leaderboard",
+        description: "A leaderboard app that sends and recieve usernames and scores from an Api built with Html Css and Javascript",
+        tools: ["Api", "webpack", "css", "Javascript"],
+        image: "../images/leader.png",
+        live: "https://super-meerkat-779de8.netlify.app/",
+        source: "https://github.com/ifzyy/LeaderBoard"
+    },
+    {
+        name: "Todo-List",
+        description: "A todo list app where you can add remove and edit curated tasks Built with Html Css and Javascript",
+        tools: ["Html", "css", "Javascript","local storage Api"],
+        image: "../images/todo.png",
+        live: "https://ifzyy.github.io/To-Do-List/",
+        source: "https://github.com/ifzyy/To-Do-List"
     },
 ]
