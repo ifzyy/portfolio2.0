@@ -4,8 +4,8 @@ export const data = [
         description: "   A Covid-19 summary API based mobile application that renders real-time data globally and Covid-19 Cases.",
         tools: ["React", "Redux", "Api"],
         image: "../images/metrics.png",
-        live: "#live",
-        source: "#source"
+        live: "https://elegant-torrone-72f71c.netlify.app/",
+        source: "https://github.com/ifzyy/metrics-webapp"
 
     },
     {
@@ -13,8 +13,8 @@ export const data = [
         description: "  A website that allows user book a reservation for a rocket launch event",
         tools: ["Html", "Css", "javascript", "Api"],
         image: "../images/rocket.png",
-        live: "#live",
-        source: "#source"
+        live: "https://asimkhan2019.github.io/Kanban_Board/",
+        source: "https://github.com/ifzyy/spaceships"
 
     },
     {
