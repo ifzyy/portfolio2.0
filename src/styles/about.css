@@ -1,0 +1,149 @@
+@media (min-width: 1000px) {
+    #about {
+        margin-top: 200px;
+        padding: 50px 10px 0 100px;
+
+    }
+
+    .about-header {
+        font-size: 90px;
+        color: #00FFFF;
+        margin-bottom: 80px;
+    }
+
+    .about-text {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    .my-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .me {
+        width: 700px;
+
+    }
+
+    .split {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .resume {
+        border: 3px solid cyan;
+        padding: 10px;
+        transition: all 0.5s ease-out;
+        background: linear-gradient(to right, cyan 50%, transparent 50%);
+        background-size: 200% 100%;
+        background-position: right;
+        color: cyan;
+        font-size: 20px;
+    }
+
+    .resume:hover {
+        background-position: left;
+        color: black;
+    }
+
+    .lang {
+        text-align: center;
+        text-decoration: underline;
+        margin-top: 200px;
+        margin-bottom: 40px;
+        font-size: 50px;
+
+    }
+
+    .language-used > li {
+        font-size: 30px;
+
+    }
+
+    .language-used > li > svg {
+        margin-right: 10px;
+        color: cyan;
+    }
+
+    .splitter {
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+    }
+}
+
+@media (max-width: 999px) {
+    .me {
+        width: 100%;
+        margin: 20px 10px 10px 10px;
+    }
+
+    #about {
+        margin-top: 200px;
+        padding: 50px 20px 0 20px;
+    }
+
+    .about-header {
+        font-size: 50px;
+        color: #00FFFF;
+        margin-bottom: 80px;
+    }
+
+    .about-text {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    .my-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .split {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .resume {
+        border: 3px solid cyan;
+        padding: 10px;
+        transition: all 0.5s ease-out;
+        background: linear-gradient(to right, cyan 50%, transparent 50%);
+        background-size: 200% 100%;
+        background-position: right;
+        color: cyan;
+        font-size: 20px;
+    }
+
+    .resume:hover {
+        background-position: left;
+        color: black;
+    }
+
+    .lang {
+        text-align: center;
+        text-decoration: underline;
+        margin-top: 200px;
+        margin-bottom: 40px;
+        font-size: 20px;
+
+    }
+
+    .language-used > li {
+        font-size: 20px;
+
+    }
+
+    .language-used > li > svg {
+        margin-right: 10px;
+        color: cyan;
+    }
+
+    .splitter {
+    }
+}
