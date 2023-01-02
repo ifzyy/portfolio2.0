@@ -1,3 +1,7 @@
 .active {
     color: cyan !important;
 }
+
+.navbar {
+    background-color:#070707 !important;
+}

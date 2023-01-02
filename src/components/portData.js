@@ -1,7 +1,8 @@
 export const data = [
     {
+        id: 1,
         name: "Covid Statistics",
-        description: "   A Covid-19 summary API based mobile application that renders real-time data globally and Covid-19 Cases.",
+        description: "A Covid-19 summary API based mobile application that renders real-time data globally and Covid-19 Cases.",
         tools: ["React", "Redux", "Api"],
         image: "../images/metrics.png",
         live: "https://elegant-torrone-72f71c.netlify.app/",
@@ -9,6 +10,7 @@ export const data = [
 
     },
     {
+        id: 2,
         name: "Spaceships",
         description: "  A website that allows user book a reservation for a rocket launch event",
         tools: ["Html", "Css", "javascript", "Api"],
@@ -18,6 +20,7 @@ export const data = [
 
     },
     {
+        id: 3,
         name: "Music Concert",
         description: " A website to get the information of an annual musician get together website",
         tools: ["Html", "CSS", "Javascript"],
@@ -27,6 +30,7 @@ export const data = [
 
     },
     {
+        id: 4,
         name: "Awesome Books",
         description: " An app that allows the user to add books that they intend to read and remove it when they are done.",
         tools: ["Html", "Css", "Javascript", "Webpack"],
@@ -36,6 +40,7 @@ export const data = [
 
     },
     {
+        id: 5,
         name: "Spa",
         description: "A beautiful Spa template to Book an appointment for a session",
         tools: ["Html", "css", "Javascript"],
@@ -45,6 +50,7 @@ export const data = [
 
     },
     {
+        id: 6,
         name: "Maths Magician",
         description: "The project is a Single Page Application (SPA) that gives users the ability to perform basic mathematical operation and get daily mathematical quote",
         tools: ["React","Redux", "css", "Javascript"],
@@ -53,6 +59,7 @@ export const data = [
         source: "https://github.com/ifzyy/capstone-one"
     },
     {
+        id: 7,
         name: "Leaderboard",
         description: "A leaderboard app that sends and recieve usernames and scores from an Api built with Html Css and Javascript",
         tools: ["Api", "webpack", "css", "Javascript"],
@@ -61,6 +68,7 @@ export const data = [
         source: "https://github.com/ifzyy/LeaderBoard"
     },
     {
+        id: 8,
         name: "Todo-List",
         description: "A todo list app where you can add remove and edit curated tasks Built with Html Css and Javascript",
         tools: ["Html", "css", "Javascript","local storage Api"],

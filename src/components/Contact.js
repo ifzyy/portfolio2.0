@@ -17,7 +17,7 @@ const Contact = () => {
                   <form action="https://formspree.io/f/mlezzzyn" method="post" id="form" data-aos="fade-left">
                       <div className="form">
                           <label htmlFor="name" />
-                          <input type="text" id="name" name="name" className="no-border name" minLength={1} maxLength={30} placeholder="Full name" required />
+                          <input type="text" id="name" name="name" className="no-border name" minLength={1} maxLength={30} placeholder="Enter Full name" required />
 
 
                           <label htmlFor="email" />

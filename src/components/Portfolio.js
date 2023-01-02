@@ -22,7 +22,7 @@ const Portfolio = () => {
             <div className="work-cards" data-aos="zoom-in">
                 {data.map((dat) => (
                     <Card
-                        key={dat.name}
+                        key={dat.id}
                         name={dat.name}
                         description={dat.description}
                         tools={dat.tools}
