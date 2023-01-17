@@ -51,21 +51,21 @@ export const data = [
     },
     {
         id: 6,
-        name: "Maths Magician",
-        description: "The project is a Single Page Application (SPA) that gives users the ability to perform basic mathematical operation and get daily mathematical quote",
-        tools: ["React","Redux", "css", "Javascript"],
-        image: "../images/maths.png",
-        live: "https://63a4f55b406eb8009ada903c--peppy-kleicha-ddf466.netlify.app/",
-        source: "https://github.com/ifzyy/capstone-one"
+        name: "Alpha Blog App",
+        description: "A blog app that allows user create read update and delete article and also check other articles",
+        tools: ["Ruby", "Ruby on Rails", "postgresql"],
+        image: "../images/blog.png",
+        live: "https://falling-night-2917.fly.dev/",
+        source: "https://github.com/ifzyy/alpha-blog-app"
     },
     {
         id: 7,
-        name: "Leaderboard",
-        description: "A leaderboard app that sends and recieve usernames and scores from an Api built with Html Css and Javascript",
-        tools: ["Api", "webpack", "css", "Javascript"],
-        image: "../images/leader.png",
-        live: "https://super-meerkat-779de8.netlify.app/",
-        source: "https://github.com/ifzyy/LeaderBoard"
+        name: "Budget-app",
+        description: "A budget app that allows users to keep track of their spending. Built with Ruby and Ruby on Rails.",
+        tools: ["Ruby", "Ruby on Rails", "postgresql"],
+        image: "../images/budget.png",
+        live: "https://autumn-wind-1588.fly.dev/",
+        source: "https://github.com/ifzyy/Budget-app"
     },
     {
         id: 8,
@@ -76,4 +76,13 @@ export const data = [
         live: "https://ifzyy.github.io/To-Do-List/",
         source: "https://github.com/ifzyy/To-Do-List"
     },
+    {
+        id: 9,
+        name: "Recipe-app",
+        description: "The recipe app is an app to store food recipes",
+        tools: ["Ruby", "Ruby on Rails", "postgresql"],
+        image: "../images/recipe.png",
+        live: "https://fragrant-fire-4316.fly.dev/",
+        source: "https://github.com/ifzyy/recipe-app"
+    }
 ]

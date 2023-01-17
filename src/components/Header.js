@@ -32,6 +32,7 @@ const Header = () => {
                         </div>
                         <div className="spi">
                             <a href="#contact" className="contact-me-up">Contact me</a>
+                            
                             <a className="contact-me-up" target="blank" href="https://docs.google.com/document/d/1tLfvt2igmRN-oh-5-nXqFZWA4qcpI37imy7ylz69Ljk/edit?usp=sharing">Get My Resume</a>
                         </div>
 
