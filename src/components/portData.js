@@ -45,7 +45,7 @@ export const data = [
         description: "A beautiful Spa template to Book an appointment for a session",
         tools: ["Html", "css", "Javascript"],
         image: "../images/spa.png",
-        live: "https://ifzyy.github.io/Spa/",
+        live: "https://incredible-parfait-0c36b4.netlify.app",
         source: "https://github.com/ifzyy/Spa"
 
     },
