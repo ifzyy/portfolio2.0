@@ -31,12 +31,12 @@ export const data = [
     },
     {
         id: 4,
-        name: "Awesome Books",
-        description: " An app that allows the user to add books that they intend to read and remove it when they are done.",
-        tools: ["Html", "Css", "Javascript", "Webpack"],
-        image: "../images/awesome.png",
-        live: "https://ifzyy.github.io/Awesome-books-ES6/",
-        source: "https://github.com/ifzyy/Awesome-books-ES6"
+        name: "moviflix",
+        description: " An app that fetches movies from an api and render it beautifully, user are also to sign up and login to use the app",
+        tools: ["React", "Redux", "Ruby on Rails","CSS", "Postgresql"],
+        image: "../images/moviflix.png",
+        live: "https://johnsn-moviflix.netlify.app",
+        source: "https://github.com/ifzyy/moviflix"
 
     },
     {
