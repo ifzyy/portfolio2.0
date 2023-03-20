@@ -31,9 +31,9 @@ export const data = [
     },
     {
         id: 4,
-        name: "moviflix",
+        name: "Moviflix",
         description: " An app that fetches movies from an api and render it beautifully, user are also to sign up and login to use the app",
-        tools: ["React", "Redux", "Ruby on Rails","CSS", "Postgresql"],
+        tools: ["React", "Redux", "Ruby on Rails", "CSS", "Postgresql"],
         image: "../images/moviflix.png",
         live: "https://johnsn-moviflix.netlify.app",
         source: "https://github.com/ifzyy/moviflix"
@@ -45,7 +45,7 @@ export const data = [
         description: "A beautiful Spa template to Book an appointment for a session",
         tools: ["Html", "css", "Javascript"],
         image: "../images/spa.png",
-        live: "https://incredible-parfait-0c36b4.netlify.app",
+        live: "https://ifzyy.github.io/Spa/",
         source: "https://github.com/ifzyy/Spa"
 
     },
@@ -71,7 +71,7 @@ export const data = [
         id: 8,
         name: "Todo-List",
         description: "A todo list app where you can add remove and edit curated tasks Built with Html Css and Javascript",
-        tools: ["Html", "css", "Javascript","local storage Api"],
+        tools: ["Html", "css", "Javascript", "local storage Api"],
         image: "../images/todo.png",
         live: "https://ifzyy.github.io/To-Do-List/",
         source: "https://github.com/ifzyy/To-Do-List"
