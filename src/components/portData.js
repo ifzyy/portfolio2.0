@@ -11,12 +11,12 @@ export const data = [
     },
     {
         id: 2,
-        name: "Spaceships",
-        description: "  A website that allows user book a reservation for a rocket launch event",
-        tools: ["Html", "Css", "javascript", "Api"],
-        image: "../images/rocket.png",
-        live: "https://asimkhan2019.github.io/Kanban_Board/",
-        source: "https://github.com/ifzyy/spaceships"
+        name: "TechTime",
+        description: "  A fully responsive landing page",
+        tools: ["React js", "Css", "Swiper js", "bootstrap"],
+        image: "../images/techtime.png",
+        live: "https://tiny-bunny-51b27b.netlify.app/",
+        source: "https://github.com/ifzyy/techtime"
 
     },
     {
