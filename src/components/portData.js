@@ -69,12 +69,12 @@ export const data = [
     },
     {
         id: 8,
-        name: "Todo-List",
-        description: "A todo list app where you can add remove and edit curated tasks Built with Html Css and Javascript",
-        tools: ["Html", "css", "Javascript", "local storage Api"],
-        image: "../images/todo.png",
-        live: "https://ifzyy.github.io/To-Do-List/",
-        source: "https://github.com/ifzyy/To-Do-List"
+        name: "Chocolux",
+        description: "A beautiful fully responsive e-commerce landing page",
+        tools: ["Html", "css", "Javascript","jquery","sass"],
+        image: "../images/chocolux.png",
+        live: "https://ifzyy.github.io/chocolux/",
+        source: "https://github.com/ifzyy/chocolux"
     },
     {
         id: 9,
