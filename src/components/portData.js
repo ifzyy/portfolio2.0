@@ -21,12 +21,12 @@ export const data = [
     },
     {
         id: 3,
-        name: "Music Concert",
-        description: " A website to get the information of an annual musician get together website",
-        tools: ["Html", "CSS", "Javascript"],
-        image: "../images/tgmc.png",
-        live: "https://ifzyy.github.io/capstone-one/",
-        source: "https://github.com/ifzyy/capstone-one/"
+        name: "Poco web app",
+        description: " A fully responsive e-commerce landing page",
+        tools: [ "CSS", "React js", "swiper js", "tailwind css"],
+        image: "../images/poco.png",
+        live: "https://johnsn-poco.netlify.app/",
+        source: "https://github.com/ifzyy/restaurant"
 
     },
     {
