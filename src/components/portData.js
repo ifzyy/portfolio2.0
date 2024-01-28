@@ -42,7 +42,7 @@ export const data = [
     {
         id: 5,
         name: "Spa",
-        description: "A beautiful Spa template to Book an appointment for a session",
+        description: "A beautiful Spa template website to Book an appointment for a session",
         tools: ["Html", "css", "Javascript"],
         image: "../images/spa.png",
         live: "https://ifzyy.github.io/spa/",
@@ -78,11 +78,11 @@ export const data = [
     },
     {
         id: 9,
-        name: "Recipe-app",
-        description: "The recipe app is an app to store food recipes",
-        tools: ["Ruby", "Ruby on Rails", "postgresql"],
-        image: "../images/recipe.png",
-        live: "https://fragrant-fire-4316.fly.dev/",
-        source: "https://github.com/ifzyy/recipe-app"
+        name: "clear-link",
+        description: "A fully responsive landing page that shows a product for better video conferencing",
+        tools: ["Reactjs", "Tailwind CSS", "swiperjs"],
+        image: "../images/clearlink.png",
+        live: "https://calm-froyo-3de41b.netlify.app/",
+        source: "https://github.com/ifzyy/clear-link"
     }
 ]
