@@ -113,7 +113,7 @@ const Hero = () => {
           {/* Content Side */}
           <div className="text-left">
             <motion.div
-              className="inline-flex items-center px-4 py-2 glass-card rounded-full mb-6 border border-white/20"
+              className="inline-flex items-center px-4 py-2 glass-card rounded-full mb-6 border border-white/20 mt-4"
               variants={itemVariants}
             >
               <motion.div
