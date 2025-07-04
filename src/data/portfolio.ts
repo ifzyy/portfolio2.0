@@ -15,7 +15,7 @@ export const projects: Project[] = [
     title: "TechTime",
     description: "  A fully responsive landing page",
     technologies: ["React js", "Css", "Swiper js", "bootstrap"],
-    image: "../images/techtime.png",
+    image: "/techtime.png",
     liveUrl: "https://tiny-bunny-51b27b.netlify.app/",
     sourceUrl: "https://github.com/ifzyy/techtime",
     featured: true
@@ -25,7 +25,7 @@ export const projects: Project[] = [
     title: "Poco web app",
     description: " A fully responsive e-commerce landing page",
     technologies: ["CSS", "React js", "swiper js", "tailwind css"],
-    image: "../images/poco.png",
+    image: "/poco.png",
     liveUrl: "https://johnsn-poco.netlify.app/",
     sourceUrl: "https://github.com/ifzyy/restaurant",
     featured: true
@@ -36,7 +36,7 @@ export const projects: Project[] = [
     title: "Spa",
     description: "A beautiful Spa template website to Book an appointment for a session",
     technologies: ["Html", "css", "Javascript"],
-    image: "../images/spa.png",
+    image: "/spa.png",
     liveUrl: "https://ifzyy.github.io/spa/",
     sourceUrl: "https://github.com/ifzyy/Spa",
     featured: true
@@ -48,7 +48,7 @@ export const projects: Project[] = [
     title: "Chocolux",
     description: "A beautiful fully responsive e-commerce landing page",
     technologies: ["Html", "css", "Javascript", "jquery", "sass"],
-    image: "../images/chocolux.png",
+    image: "/chocolux.png",
     liveUrl: "https://ifzyy.github.io/chocolux/",
     sourceUrl: "https://github.com/ifzyy/chocolux",
     featured: true
@@ -58,7 +58,7 @@ export const projects: Project[] = [
     title: "clear-link",
     description: "A fully responsive landing page that shows a product for better video conferencing",
     technologies: ["Reactjs", "Tailwind CSS", "swiperjs"],
-    image: "../images/clearlink.png",
+    image: "/clearlink.png",
     liveUrl: "https://calm-froyo-3de41b.netlify.app/",
     sourceUrl: "https://github.com/ifzyy/clear-link",
     featured: true
