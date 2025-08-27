@@ -11,6 +11,26 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 1,
+    title: "Joseph's website",
+    description: "A website for Joseph Gbadamosi. One of Nigeria's best copywriter ",
+    technologies: ["React+Vite", "tailwindCSS", "AOS", "Javascript"],
+    image: "/joseph-gbadamosi.png",
+    liveUrl: "https://josephgbadamosi.com/",
+    sourceUrl: "https://github.com/ifzyy/jg",
+    featured: true
+  },
+  {
+    id: 4,
+    title: "Heallyhub",
+    description: "Heally’s core identity & data platform powering apps like Collabor8.I built and led it as CTO.",
+    technologies: ["CSS","tailwindCSS", "React+vite", "swiper js","NodeJS","expressJS","google-oauth","mySQL","sequelize","JWT"],
+    image: "/heallyhub.png",
+    liveUrl: "app.heallyhub.com",
+    sourceUrl: "private",
+    featured: false
+  },
+  {
     id: 2,
     title: "TechTime",
     description: "  A fully responsive landing page",
