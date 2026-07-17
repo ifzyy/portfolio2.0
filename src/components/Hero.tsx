@@ -1,322 +1,144 @@
-import React, { useEffect, useState } from 'react';
-import { motion, useAnimation } from 'framer-motion';
-import { ArrowRight, Download, Mail, Code, Sparkles, Zap } from 'lucide-react';
-import { useInView } from 'react-intersection-observer';
+import React, { useRef } from 'react';
+import { motion, useMotionValue, useMotionTemplate, useScroll, useTransform, useReducedMotion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
+import Magnetic from './Magnetic';
 
 const Hero = () => {
-  const [text, setText] = useState('');
-  const [showCursor, setShowCursor] = useState(true);
-  const fullText = "Hi, I'm Johnson Emmanuel";
-  const controls = useAnimation();
-  const { ref, inView } = useInView({ threshold: 0.1 });
+  const reduceMotion = useReducedMotion();
+  const mouseX = useMotionValue(50);
+  const mouseY = useMotionValue(35);
+  const sectionRef = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    let i = 0;
-    const timer = setInterval(() => {
-      if (i < fullText.length) {
-        setText(fullText.slice(0, i + 1));
-        i++;
-      } else {
-        clearInterval(timer);
-        setTimeout(() => setShowCursor(false), 1000);
-      }
-    }, 100);
+  // Content gently drifts up and fades as the hero scrolls away.
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end start'],
+  });
+  const contentY = useTransform(scrollYProgress, [0, 1], [0, 140]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.65], [1, 0]);
+  const contentScale = useTransform(scrollYProgress, [0, 1], [1, 0.97]);
 
-    return () => clearInterval(timer);
-  }, []);
+  // Spotlight that trails the cursor across the hero.
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (reduceMotion) return;
+    const rect = sectionRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    mouseX.set(((e.clientX - rect.left) / rect.width) * 100);
+    mouseY.set(((e.clientY - rect.top) / rect.height) * 100);
+  };
+  const spotlight = useMotionTemplate`radial-gradient(600px circle at ${mouseX}% ${mouseY}%, rgba(41,151,255,0.12), transparent 65%)`;
 
-  useEffect(() => {
-    if (inView) {
-      controls.start('visible');
-    }
-  }, [controls, inView]);
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
-    },
+  const scrollTo = (id: string) => {
+    document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const itemVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 12,
-      },
-    },
+  const container = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
+  };
+  const item = {
+    hidden: { opacity: 0, y: 24 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
   };
 
-  const scrollToContact = () => {
-    document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const handleResumeDownload = () => {
-    const link = document.createElement('a');
-    link.href = '/resume.pdf';
-    link.download = 'Johnson_Emmanuel_Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  const drift = (a: number[], b: number[], d: number) =>
+    reduceMotion ? {} : { animate: { x: a, y: b }, transition: { duration: d, repeat: Infinity, ease: 'easeInOut' } };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-      {/* Animated background grid */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:50px_50px] animate-pulse" />
+    <section
+      id="home"
+      ref={sectionRef}
+      onMouseMove={handleMouseMove}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
+      {/* Drifting spectrum aurora + cursor-follow spotlight */}
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div
+          className="absolute -top-40 -left-24 h-[520px] w-[520px] rounded-full bg-violet/25 blur-[130px]"
+          {...drift([0, 70, 0], [0, 50, 0], 20)}
+        />
+        <motion.div
+          className="absolute top-1/4 -right-32 h-[560px] w-[560px] rounded-full bg-accent/20 blur-[140px]"
+          {...drift([0, -60, 0], [0, 70, 0], 26)}
+        />
+        <motion.div
+          className="absolute -bottom-40 left-1/4 h-[460px] w-[460px] rounded-full bg-cyan/15 blur-[130px]"
+          {...drift([0, 50, 0], [0, -40, 0], 30)}
+        />
+        <motion.div
+          className="absolute top-1/2 left-1/2 h-[360px] w-[360px] rounded-full bg-solar/10 blur-[130px]"
+          {...drift([0, -40, 0], [0, 30, 0], 34)}
+        />
       </div>
-
-      {/* Floating geometric shapes */}
-      <motion.div
-        className="absolute top-20 left-20 w-32 h-32 border border-white/20 rotate-45"
-        animate={{
-          rotate: [45, 135, 45],
-          scale: [1, 1.1, 1],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-      
-      <motion.div
-        className="absolute bottom-32 right-20 w-24 h-24 bg-white/5 rounded-full"
-        animate={{
-          y: [0, -20, 0],
-          scale: [1, 1.2, 1],
-        }}
-        transition={{
-          duration: 6,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
+      <motion.div className="absolute inset-0" style={{ background: spotlight }} />
 
       <motion.div
-        ref={ref}
-        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-        variants={containerVariants}
+        className="relative z-10 max-w-content mx-auto px-6 text-center"
+        style={reduceMotion ? undefined : { y: contentY, opacity: contentOpacity, scale: contentScale }}
+        variants={container}
         initial="hidden"
-        animate={controls}
+        animate="visible"
       >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-4">
-          {/* Content Side */}
-          <div className="text-left">
-            <motion.div
-              className="inline-flex items-center px-4 py-2 glass-card rounded-full mb-6 border border-white/20 mt-4"
-              variants={itemVariants}
-            >
-              <motion.div
-                className="w-2 h-2 bg-green-400 rounded-full mr-2"
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              />
-              <p className="text-gray-300 font-medium">Available for new opportunities</p>
-            </motion.div>
-            
-            <motion.div variants={itemVariants} className="mb-6">
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight">
-                <span className="text-white">{text}</span>
-                {showCursor && (
-                  <motion.span
-                    className="text-white"
-                    animate={{ opacity: [1, 0] }}
-                    transition={{ duration: 0.8, repeat: Infinity }}
-                  >
-                    |
-                  </motion.span>
-                )}
-              </h1>
-            </motion.div>
+        <motion.p variants={item} className="eyebrow mb-6">
+          Full-Stack Engineer · Lead Web Engineer at Wiibi Energy
+        </motion.p>
 
-            <motion.h2
-              variants={itemVariants}
-              className="text-3xl sm:text-4xl lg:text-5xl font-light text-gray-300 mb-8"
-            >
-              Full-Stack{' '}
-              <span className="relative">
-                <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-                  Engineer
-                </span>
-                <motion.div
-                  className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-white/50 to-transparent"
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ delay: 2, duration: 1 }}
-                />
-              </span>
-            </motion.h2>
-            
-            <motion.div variants={itemVariants} className="max-w-2xl mb-12">
-              <p className="text-xl text-gray-400 leading-relaxed mb-6">
-                I build scalable web applications and lead development teams to deliver{' '}
-                <span className="text-white font-medium">production-ready solutions</span>.
-                From mentoring developers to architecting enterprise systems, I create products that matter.
-              </p>
-            </motion.div>
+        <motion.h1
+          variants={item}
+          className="text-6xl sm:text-7xl lg:text-8xl font-bold tracking-tightest leading-[0.98] text-ink"
+        >
+          I am Johnson.
+          <br />
+          <span className="text-gradient">I build software</span>
+          <br />
+          people rely on.
+        </motion.h1>
 
-            <motion.div
-              variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-6"
-            >
-              <motion.button
-                onClick={scrollToContact}
-                className="group relative px-8 py-4 bg-white text-black font-semibold rounded-lg overflow-hidden"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-gray-200 to-white"
-                  initial={{ x: '-100%' }}
-                  whileHover={{ x: '0%' }}
-                  transition={{ duration: 0.3 }}
-                />
-                <span className="relative flex items-center">
-                  <Mail className="h-5 w-5 mr-2" />
-                  Let's Build Something
-                  <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </motion.button>
-              
-              <motion.button
-                onClick={handleResumeDownload}
-                className="group px-8 py-4 glass-card border-2 border-white/30 text-white hover:bg-white hover:text-black transition-all duration-300 rounded-lg font-semibold"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span className="flex items-center">
-                  <Download className="h-5 w-5 mr-2" />
-                  View Resume
-                </span>
-              </motion.button>
-            </motion.div>
-          </div>
+        <motion.p
+          variants={item}
+          className="mx-auto mt-8 max-w-2xl text-xl sm:text-2xl text-muted leading-relaxed"
+        >
+          I design and build whole products, from the first commit to production scale.
+          Fast, reliable, and built to hold under real load.
+        </motion.p>
 
-          {/* Interactive Illustration */}
+        <motion.div
+          variants={item}
+          className="mt-11 flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+          <Magnetic className="inline-block">
+            <button
+              onClick={() => scrollTo('#case-study')}
+              className="group inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3.5 font-medium text-black transition-transform duration-300 hover:scale-[1.03]"
+            >
+              See the work
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </button>
+          </Magnetic>
+          <Magnetic className="inline-block">
+            <button
+              onClick={() => scrollTo('#contact')}
+              className="rounded-full px-7 py-3.5 font-medium text-accent transition-colors hover:text-white"
+            >
+              Get in touch
+            </button>
+          </Magnetic>
+        </motion.div>
+      </motion.div>
+
+      {/* Scroll cue */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.4, duration: 1 }}
+      >
+        <div className="h-9 w-5 rounded-full border border-white/20 flex justify-center pt-1.5" aria-hidden>
           <motion.div
-            variants={itemVariants}
-            className="relative"
-          >
-            <div className="relative w-full h-96 lg:h-[500px]">
-              {/* Central developer figure */}
-              <motion.div
-                className="absolute inset-0 flex items-center justify-center"
-                animate={{
-                  y: [0, -10, 0],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                <div className="relative">
-                  <motion.div
-                    className="w-48 h-64 glass-card rounded-t-full relative border border-white/20"
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    {/* Avatar */}
-                    <motion.div
-                      className="w-16 h-16 bg-gradient-to-br from-white/30 to-white/10 rounded-full mx-auto mb-4 mt-8 border border-white/20"
-                      animate={{
-                        boxShadow: [
-                          '0 0 20px rgba(255,255,255,0.2)',
-                          '0 0 40px rgba(255,255,255,0.4)',
-                          '0 0 20px rgba(255,255,255,0.2)',
-                        ],
-                      }}
-                      transition={{ duration: 3, repeat: Infinity }}
-                    />
-                    
-                    {/* Code lines */}
-                    <div className="absolute inset-x-0 top-24 px-6 space-y-2">
-                      {[0.8, 0.6, 0.9, 0.7].map((width, i) => (
-                        <motion.div
-                          key={i}
-                          className="h-1 bg-white/40 rounded"
-                          style={{ width: `${width * 100}%` }}
-                          animate={{ opacity: [0.4, 1, 0.4] }}
-                          transition={{
-                            duration: 2,
-                            repeat: Infinity,
-                            delay: i * 0.2,
-                          }}
-                        />
-                      ))}
-                    </div>
-                  </motion.div>
-
-                  {/* Floating tech icons */}
-                  {[
-                    { Icon: Code, position: { top: -8, left: -8 }, delay: 0 },
-                    { Icon: Sparkles, position: { top: -4, right: -12 }, delay: 1 },
-                    { Icon: Zap, position: { bottom: -8, left: -12 }, delay: 2 },
-                  ].map(({ Icon, position, delay }, i) => (
-                    <motion.div
-                      key={i}
-                      className="absolute w-12 h-12 glass-card rounded-lg flex items-center justify-center border border-white/20"
-                      style={position}
-                      animate={{
-                        y: [0, -15, 0],
-                        rotate: [0, 10, 0],
-                      }}
-                      transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        delay: delay,
-                        ease: "easeInOut",
-                      }}
-                      whileHover={{ scale: 1.2 }}
-                    >
-                      <Icon className="h-6 w-6 text-white" />
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-
-              {/* Orbiting elements */}
-              <div className="absolute inset-0">
-                {[0, 1, 2].map((index) => (
-                  <motion.div
-                    key={index}
-                    className={`absolute border border-white/10 rounded-full ${
-                      index === 0 ? 'inset-0' : index === 1 ? 'inset-8' : 'inset-16'
-                    }`}
-                    animate={{ rotate: 360 }}
-                    transition={{
-                      duration: 20 + index * 5,
-                      repeat: Infinity,
-                      ease: "linear",
-                      direction: index % 2 === 0 ? 'normal' : 'reverse',
-                    }}
-                  >
-                    <motion.div
-                      className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white/40 rounded-full"
-                      animate={{
-                        scale: [1, 1.5, 1],
-                        opacity: [0.4, 1, 0.4],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        delay: index * 0.5,
-                      }}
-                    />
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
+            className="h-1.5 w-1.5 rounded-full bg-muted"
+            animate={reduceMotion ? undefined : { y: [0, 8, 0], opacity: [1, 0.3, 1] }}
+            transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
+          />
         </div>
       </motion.div>
     </section>

@@ -1,217 +1,111 @@
-import React, { useEffect, useState } from 'react';
-import { Building2, Calendar, MapPin, TrendingUp, Briefcase, Award } from 'lucide-react';
+import React from 'react';
+import SectionHeading from './SectionHeading';
+import Reveal from './Reveal';
+
+const experiences = [
+  {
+    company: 'Wiibi Energy',
+    position: 'Lead Web Engineer',
+    location: 'Nigeria (Remote)',
+    period: 'Dec 2025 — Present',
+    description:
+      'Leading the web engineering of a vertically integrated operating platform for a solar-energy retailer: store, payments, CRM and admin, in one codebase.',
+    achievements: [
+      'Delivered 7 integrated systems on one shared customer and order record',
+      'Concurrency-safe money and stock, with no overselling under live load',
+      'Hardened against 13 attack classes in a live pentest',
+    ],
+  },
+  {
+    company: 'Heally',
+    position: 'Chief Technology Officer',
+    location: 'Remote · United States',
+    period: 'Feb 2024 — Jan 2026',
+    description:
+      'Led a learning-hub product suite end to end, from architecture and identity systems to a remote engineering team.',
+    achievements: [
+      'Built the platform and OAuth2 identity layer from the ground up',
+      'Scaled delivery with CI/CD, Docker, and Azure',
+      'Lead and mentor developers across multiple regions',
+    ],
+  },
+  {
+    company: 'Delsoft',
+    position: 'Frontend Engineer',
+    location: 'Lagos, Nigeria',
+    period: 'Oct 2023 — Jan 2025',
+    description:
+      'Built responsive, modern interfaces in React and Tailwind CSS across a range of client projects.',
+    achievements: [
+      'Cut load times by 25% through targeted optimization',
+      'Improved cross-browser consistency across every build',
+      'Delivered pixel-perfect, responsive designs',
+    ],
+  },
+  {
+    company: 'Microverse',
+    position: 'Mentor (Volunteer)',
+    location: 'Remote',
+    period: 'Aug 2022 — Jan 2024',
+    description:
+      'Mentored three junior developers through code reviews, pair sessions, and career guidance.',
+    achievements: [
+      'Guided mentees to their first professional roles',
+      'Raised code quality through thorough reviews',
+      'Coached on structure, motivation, and momentum',
+    ],
+  },
+  {
+    company: 'Freelance',
+    position: 'Full-Stack Developer',
+    location: 'Remote',
+    period: 'May 2022 — Present',
+    description:
+      'Shipped production web apps that moved real numbers for clients: engagement, sales, and retention.',
+    achievements: [
+      'Built full-stack apps with React, Node.js, and MySQL',
+      'Increased engagement and sales for multiple clients',
+      'Delivered on time and within budget',
+    ],
+  },
+];
 
 const Experience = () => {
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const experiences = [
-    {
-      company: 'Heally',
-      position: 'Chief Technology Officer',
-      location: 'North Carolina, United States (Remote)',
-      period: 'February 2024 - Present',
-      description: 'Leading the development of a learning hub product suite using React, Node.js, and OAuth2 identity systems.',
-      achievements: [
-        'Scaled architecture with CI/CD, Azure, and Docker',
-        'Managing remote developers across multiple regions',
-        'Built comprehensive learning platform from ground up'
-      ],
-      logo: '🚀'
-    },
-    {
-      company: 'Delsoft',
-      position: 'Frontend Engineer',
-      location: 'Lagos, Nigeria',
-      period: 'October 2023 - January 2025',
-      description: 'Built responsive and modern interfaces with React.js and Tailwind CSS for various client projects.',
-      achievements: [
-        'Improved cross-browser compatibility across all projects',
-        'Reduced load times by 25% through optimization techniques',
-        'Delivered pixel-perfect responsive designs'
-      ],
-      logo: '💻'
-    },
-    {
-      company: 'Microverse',
-      position: 'Mentor (Volunteer)',
-      location: 'Remote',
-      period: 'August 2022 - January 2024',
-      description: 'Mentored 3 junior web developers, providing technical support through code reviews and guidance.',
-      achievements: [
-        'Provided technical support through comprehensive code reviews',
-        'Proposed improvements to code organization for better performance',
-        'Offered advice on maintaining motivation and program longevity'
-      ],
-      logo: '🎓'
-    },
-    {
-      company: 'Freelance Projects',
-      position: 'Full-Stack Developer',
-      location: 'Remote',
-      period: 'May 2022 - Present',
-      description: 'Delivered production-ready web applications for clients that increased user engagement and sales.',
-      achievements: [
-        'Built full-stack apps using React, Redux, Ruby on Rails, Node.js, and MySQL',
-        'Increased user engagement and sales for multiple clients',
-        'Delivered production-ready solutions on time and within budget'
-      ],
-      logo: '🚀'
-    }
-  ];
-
   return (
-    <section id="experience" className="section-padding bg-black relative overflow-hidden">
-      {/* Parallax Background */}
-      <div 
-        className="absolute inset-0 geometric-pattern opacity-10"
-        style={{ transform: `translateY(${scrollY * 0.2}px)` }}
-      ></div>
-      
-      {/* Floating elements */}
-      <div 
-        className="absolute top-32 right-1/4 w-24 h-24 border border-white/10 rotate-12 animate-parallax-float"
-        style={{ transform: `translateY(${scrollY * 0.15}px) rotate(12deg)` }}
-      ></div>
-      <div 
-        className="absolute bottom-40 left-1/3 w-20 h-20 bg-white/5 rounded-full animate-float"
-        style={{ transform: `translateY(${scrollY * 0.1}px)`, animationDelay: '3s' }}
-      ></div>
-      
-      {/* Career timeline illustration */}
-      <div 
-        className="absolute top-20 left-10 opacity-10"
-        style={{ transform: `translateY(${scrollY * 0.1}px)` }}
-      >
-        <div className="relative w-48 h-64">
-          {/* Timeline line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-white/20 transform -translate-x-1/2"></div>
-          
-          {/* Timeline nodes */}
-          {[0, 1, 2, 3].map((index) => (
-            <div
-              key={index}
-              className="absolute left-1/2 transform -translate-x-1/2 animate-pulse-glow"
-              style={{ top: `${10 + index * 25}%` }}
-            >
-              <div className="w-4 h-4 bg-white/30 rounded-full flex items-center justify-center">
-                <div className="w-2 h-2 bg-white/60 rounded-full"></div>
-              </div>
-              
-              {/* Experience cards */}
-              <div 
-                className={`absolute top-1/2 transform -translate-y-1/2 w-16 h-10 bg-white/10 rounded border border-white/20 animate-float ${
-                  index % 2 === 0 ? 'left-6' : 'right-6'
-                }`}
-                style={{ animationDelay: `${index * 0.5}s` }}
-              >
-                <div className="p-1">
-                  <div className="h-1 bg-white/30 rounded w-3/4 mb-1"></div>
-                  <div className="h-0.5 bg-white/20 rounded w-1/2"></div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      
-      {/* Skills growth chart */}
-      <div 
-        className="absolute bottom-20 right-10 opacity-10"
-        style={{ transform: `translateY(${scrollY * 0.15}px)` }}
-      >
-        <div className="relative w-32 h-24">
-          <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between space-x-1">
-            {[...Array(8)].map((_, index) => (
-              <div
-                key={index}
-                className="bg-white/20 rounded-t animate-pulse"
-                style={{
-                  width: '8px',
-                  height: `${Math.random() * 60 + 20}px`,
-                  animationDelay: `${index * 0.1}s`
-                }}
-              ></div>
-            ))}
-          </div>
-          <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-            <TrendingUp className="h-4 w-4 text-white/40" />
-          </div>
-        </div>
-      </div>
-      
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 animate-fade-in-up text-shadow">
-            Work <span className="gradient-text-static">Experience</span>
-          </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto animate-fade-in-up stagger-1">
-            My professional journey from mentoring to leading development teams
-          </p>
-        </div>
+    <section id="experience" className="section bg-black border-t border-white/5">
+      <div className="max-w-content mx-auto px-6">
+        <SectionHeading
+          eyebrow="Experience"
+          title="Where I've worked."
+          subtitle="From mentoring my first developers to leading engineering as a CTO."
+        />
 
-        <div className="space-y-8">
+        <div className="mt-16">
           {experiences.map((exp, index) => (
-            <div
-              key={index}
-              className={`group glass-card rounded-xl p-8 sophisticated-hover transition-all duration-500 animate-fade-in-up stagger-${index + 1} border-gradient`}
-            >
-              <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
-                <div className="flex items-start space-x-4 mb-4 lg:mb-0">
-                  <div className="flex-shrink-0 w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 animate-glow">
-                    {exp.logo}
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-semibold text-white group-hover:text-gray-200 transition-colors duration-300">
-                      {exp.position}
-                    </h3>
-                    <div className="flex items-center space-x-4 text-gray-400 mt-2">
-                      <div className="flex items-center">
-                        <Building2 className="h-4 w-4 mr-2 text-gray-300" />
-                        {exp.company}
-                      </div>
-                      <div className="flex items-center">
-                        <MapPin className="h-4 w-4 mr-2 text-gray-300" />
-                        {exp.location}
-                      </div>
-                    </div>
-                  </div>
+            <Reveal key={exp.company} delay={index * 0.05}>
+              <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4 md:gap-12 border-t border-white/10 py-10">
+                <div>
+                  <h3 className="text-xl font-semibold text-ink">{exp.position}</h3>
+                  <p className="mt-1 text-ink/80">{exp.company}</p>
+                  <p className="mt-3 text-sm text-muted">{exp.period}</p>
+                  <p className="text-sm text-muted">{exp.location}</p>
                 </div>
-                
-                <div className="flex items-center glass text-gray-300 px-4 py-2 rounded-lg border border-white/20 hover:border-white/50 transition-all duration-300">
-                  <Calendar className="h-4 w-4 mr-2" />
-                  {exp.period}
+
+                <div>
+                  <p className="text-lg text-muted leading-relaxed">{exp.description}</p>
+                  <ul className="mt-5 space-y-2.5">
+                    {exp.achievements.map((achievement) => (
+                      <li key={achievement} className="flex gap-3 text-muted">
+                        <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-muted" />
+                        <span>{achievement}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-
-              <p className="text-gray-300 text-lg mb-6 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
-                {exp.description}
-              </p>
-
-              <div className="space-y-3">
-                <div className="flex items-center">
-                  <TrendingUp className="h-5 w-5 text-gray-300 mr-2" />
-                  <h4 className="text-lg font-semibold text-white">Key Achievements:</h4>
-                </div>
-                <ul className="space-y-2">
-                  {exp.achievements.map((achievement, achIndex) => (
-                    <li key={achIndex} className="flex items-start text-gray-300 group-hover:text-gray-200 transition-colors duration-300">
-                      <div className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0 animate-pulse"></div>
-                      {achievement}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              
-              {/* Hover shimmer effect */}
-              <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-shimmer"></div>
-            </div>
+            </Reveal>
           ))}
+          <div className="border-t border-white/10" />
         </div>
       </div>
     </section>
